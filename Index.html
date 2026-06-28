@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Cisco CCNA Lab Notes</title>
+    <style>
+        :root{
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-color: #f8fafc;
+            --accent-color: #38bdf8;
+            --cli-bg: #000000;
+            --cli-text: #4ade80;
+        }
+        body{
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+        .container{
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        header{
+            text-align: center;
+            padding: 40px 0;
+            border-bottom: 1px solid #334155;
+        }
+        h1{
+            color: var(--accent-color); margin-bottom: 10px;
+        }
+        .lab-card{
+            background-color: var(--card-bg);
+            padding: 25px;
+            border-radius: 12px;
+            margin: 30px 0;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        h2{
+            color: var(--accent-color); margin-top: 0;
+        }
+        .badge{
+            background-color: #334155;
+            color: var(--accent-color);
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: bold;
+        }
+        pre{
+            background-color: var(--cli-bg);
+            padding: 15px;
+            border-radius: 8px;
+            overflow-x: auto;
+            border: 1px solid #334155;
+        }
+        code{
+            font-family: "courier New", Courier, monospace;
+            color: var(--cli-text);
+            font-size: 0.95rem;
+        }
+        footer{
+            text-align: center;
+            margin-top: 60px;
+            font-size: 0.9rem;
+            color: #64748b;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>My Cisco CCNA Lab Journey</h1>
+            <p>Documentation of my daily Packet Tracer and CLI practice configurations.</p>
+        </header>
+        <main>
+            <!-- LAB ENTRY START-->
+             <div class="lab-card">
+                <span class="badge">Lab #1</span>
+                <h2>Basic Router Configuration & Hostame Set</h2>
+                <p><strong>Explanation:</strong> This lab is demonstates how to enter global configuaration mode, change the router name, and secure privileged EXEC mode using and encrypted password.</p>
+                <pre><code>
+Router> enable                    
+Router# configure terminal
+Router(config)# hostname R1
+R1(config)# enable secret CCNA
+R1(config)# exit
+R1# copy running-config startup-config
+                </code>
+                </pre>
+             </div>
+            <!-- LAB ENTRY END--> 
+
+            <!-- LAB ENTRY START-->
+            <div class="lab-card">
+                <span class="badge">Lab #2</span>
+                <h2>Configuration an Interface IP Address</h2>
+                <p><strong>Explanation:</strong> Assigning an IPv4 address to a GigabitEthernet interface and enabling the port using the no shutdown command.</p>
+                <pre><code>
+Router> enable                    
+R1# configure terminal
+R1(config)# interface GigabitEthernet0/0/0
+R1(config-if)# ip address 192.168.1.1 255.255.255.0
+R1(config-if)# no shutdown
+R1(config-if)# exit                    
+                </code></pre>
+            </div>
+            <footer>
+                <p>@ 2026 Cisco Study Journal</p>
+            </footer>
+        </main>
+    </div>
+    
+</body>
+</html>
